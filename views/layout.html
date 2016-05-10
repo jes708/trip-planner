@@ -10,7 +10,7 @@
     <title>Trip Planner</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="stylesheets/style.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 
       <!-- Fixed navbar -->
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+        
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
@@ -45,38 +45,31 @@
               <li><a href="#about">@ Connect</a></li>
               <li><a href="#contact"># Discover</a></li> -->
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                </ul>
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="#">Home</a>  
+              </li>
+              <li>
+                <a href="#">About</a>  
+              </li>
+              <li>
+                <a href="#">Contact</a>  
               </li>
             </ul>
           </div><!--/.nav-collapse -->
-        </div>
       </div>
 
       <!-- Begin page content -->
-      <div class="container">
-        {% block content %}Welcome to Trip Planner{% endblock %}
-      </div> <!-- end container -->
-      
-    </div>
-
-    <div id="footer">
-      <div class="container">
-        <p class="text-muted">Trip Planner, Jon and Liz Industries</p>
-      </div>
+      {% block content %}Welcome to Trip Planner{% endblock %}
     </div>
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="css/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7x_ypedt9xFUDJKJ10-kyPUbtA0n4Fa0&sensor=true"></script>
+    <script src="js/map.js"></script>
   </body>  
 </html>

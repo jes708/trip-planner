@@ -10,25 +10,21 @@ var Activity = require('../models').Activity;
 var Promise = require('bluebird');
 module.exports = router;
 
+var myArray = {
+  hotel: "",
+  restaurants: [],
+  activities: [] 
+}
+
+var daysArray = [1,2,3,4];
+
 router.get("/", function (req, res, next) {
-  // Hotel.findAll({}).exec().then(function(dbHotels) {
-  //   Restaurant.findAll({}).exec().then(function(dbRestaurants) {
-  //     Activity.findAll({}).exec().then(function(dbActivities) {
-  //       res.render('index', {
-  //         templateHotels: dbHotels,
-  //         templateRestaurants: dbRestaurants,
-  //         templateActivities: dbActivities
-  //       });
-  //     }).then(null, console.log);
-  //   }).then(null, console.log);
-  // }).then(null, console.log);
   var hotelPromise = Hotel.findAll();
   var restaurantPromise = Restaurant.findAll();
   var placePromise = Place.findAll();
-  var activityPromise = Activity.findAll();
+  var activityPromise = Activity.findAll();  
   Promise.all([placePromise, hotelPromise, restaurantPromise, activityPromise])
   .then(function(values) {
-    console.log(values[1])
     var places = values[0];
     var hotels = values[1];
     var restaurants = values[2];
@@ -37,7 +33,28 @@ router.get("/", function (req, res, next) {
       templatePlaces: places,
       templateHotels: hotels,
       templateRestaurants: restaurants,
-      templateActivities: activities
+      templateActivities: activities,
+      myArray: myArray,
+      daysArray: daysArray
     })
   }).catch(next);
 })
+
+router.post("/hotels", function (req, res, next) {
+  myArray.hotel = req.body.hotels;
+  res.redirect('/');
+});
+
+router.post("/restaurants", function (req, res, next) {
+  if (myArray.restaurants.indexOf(req.body.restaurants) === -1) {
+    myArray.restaurants.push(req.body.restaurants);
+  }
+  res.redirect('/');
+});
+
+router.post("/activities", function (req, res, next) {
+  if (myArray.activities.indexOf(req.body.activities) === -1) {
+    myArray.activities.push(req.body.activities);
+  }
+  res.redirect('/');
+});

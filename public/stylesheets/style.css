@@ -1,13 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
 body {
-  padding: 50px;
+  padding: 50px 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00B7FF; }
 
+.navbar-inverse {
+  background: #295985;
+  background: -moz-linear-gradient(top, #295985 0%, #0b3057 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #295985), color-stop(100%, #0b3057));
+  background: -webkit-linear-gradient(top, #295985 0%, #0b3057 100%);
+  background: -o-linear-gradient(top, #295985 0%, #0b3057 100%);
+  background: -ms-linear-gradient(top, #295985 0%, #0b3057 100%);
+  background: linear-gradient(to bottom, #295985 0%, #0b3057 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#295985', endColorstr='#0b3057', GradientType=0 ); }
+
 .form-group {
   float: left;
   clear: both; }
 
-br {
-  width: auto; }
+#map {
+  float: left;
+  height: 100vh;
+  width: 70vw; }
+
+#select-div {
+  background-color: gray;
+  margin-bottom: 20px; }
+  #select-div div {
+    padding: 0; }
+  #select-div button {
+    float: right; }
+
+.subform-group {
+  display: flex; }
+
+#day-scroll {
+  background-color: orange; }
+
+#itinerary-div {
+  background-color: green; }
+
+#footer {
+  clear: both; }
+
+aside {
+  width: 30vw;
+  float: right; }
+
+aside div {
+  width: 100%;
+  padding: 10px;
+  clear: both;
+  float: right; }
+
+select {
+  min-width: 250px; }
