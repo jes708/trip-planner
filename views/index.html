@@ -2,87 +2,91 @@
 
 {% block content %}
 
-<div id="map">Map
+<div id="map" class="map-sm">Map
 </div>
-<aside>
-  <div id="select-div">
-    <form method="POST" action="/hotels">
-      <div class="form-group">
-        <label for="hotels" class="control-label">Hotels:</label>
-        <br>
-        <div class="subform-group">
-          <select name="hotels" class="form-control">
-            {% for hotel in templateHotels %}
-            <option>{{ hotel.name }}</option>
-            {% endfor %}      
-          </select>
-          <div>
-            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+<aside class="aside-sm">
+  <div class="side-container">
+    <div id="select-div">
+      <form method="POST" action="/hotels">
+        <div class="form-group">
+          <label for="hotels" class="control-label">Hotels:</label>
+          <br>
+          <div class="subform-group">
+            <select name="hotels" class="form-control">
+              {% for hotel in templateHotels %}
+              <option>{{ hotel.name }}</option>
+              {% endfor %}      
+            </select>
+            <div>
+              <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+            </div>
           </div>
         </div>
-      </div>
-    </form>
-    
-    <form method="POST" action="/restaurants">
-      <div class="form-group">
-        <label for="restaurants" class="control-label">Restaurants:</label>
-        <br>
-        <div class="subform-group">
-          <select name="restaurants" class="form-control">
-            {% for restaurant in templateRestaurants %}
-            <option>{{ restaurant.name }}</option>
-            {% endfor %}      
-          </select>
-          <div>
-            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+      </form>
+      
+      <form method="POST" action="/restaurants">
+        <div class="form-group">
+          <label for="restaurants" class="control-label">Restaurants:</label>
+          <br>
+          <div class="subform-group">
+            <select name="restaurants" class="form-control">
+              {% for restaurant in templateRestaurants %}
+              <option>{{ restaurant.name }}</option>
+              {% endfor %}      
+            </select>
+            <div>
+              <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+            </div>
           </div>
         </div>
-      </div>
-    </form>
-    
-    <form method="POST" action="/activities">
-      <div class="form-group">
-        <label for="activities" class="control-label">Activities:</label>
-        <br>
-        <div class="subform-group">
-          <select name="activities" class="form-control">
-            {% for activity in templateActivities %}
-            <option>{{ activity.name }}</option>
-            {% endfor %}      
-          </select>
-          <div>
-            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+      </form>
+      
+      <form method="POST" action="/activities">
+        <div class="form-group">
+          <label for="activities" class="control-label">Activities:</label>
+          <br>
+          <div class="subform-group">
+            <select name="activities" class="form-control">
+              {% for activity in templateActivities %}
+              <option>{{ activity.name }}</option>
+              {% endfor %}      
+            </select>
+            <div>
+              <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+            </div>
           </div>
         </div>
-      </div>
-    </form>
-  </div>
-
-  <div id="day-scroll">
-    {% for i in daysArray %}
-      <button type="submit" class="btn btn-primary">{{ i }}</button>
-    {% endfor %}
-  </div>
-
-  <div id="itinerary-div">
-  <h1>Day 1</h1>
-    <div class="form-group">
-      <h4>My Hotel</h4>
-      <p>{{ myArray.hotel }}</p>
+      </form>
     </div>
 
-    <div class="form-group">
-      <h4>My Restaurants</h4>
-      {% for restaurant in myArray.restaurants %}
-        <p>{{ restaurant }}</p>
-      {% endfor %}  
-    </div>
+    <div class="days">
+      <div id="day-scroll">
+        <h3>Day</h3>
+        {% for i in daysArray %}
+          <button type="submit" class="btn btn-primary btn-days">{{ i }}</button>
+        {% endfor %}
+      </div>
 
-    <div class="form-group">
-      <h4>My Activities</h4>
-      {% for activity in myArray.activities %}
-        <p>{{ activity }}</p>
-      {% endfor %}  
+      <div id="itinerary-div">
+        <div class="form-group">
+          <h4>My Hotel</h4>
+          <p>{{ myArray.hotel }}</p>
+        </div>
+
+        <div class="form-group">
+          <h4>My Restaurants</h4>
+          {% for restaurant in myArray.restaurants %}
+            <p>{{ restaurant }}</p>
+          {% endfor %}  
+        </div>
+
+        <div class="form-group">
+          <h4>My Activities</h4>
+          {% for activity in myArray.activities %}
+            <p>{{ activity }}</p>
+          {% endfor %}  
+        </div>
+      </div>
     </div>
   </div>
 </aside>
