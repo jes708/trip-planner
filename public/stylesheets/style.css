@@ -32,6 +32,9 @@ span.glyphicon.glyphicon-plane {
   line-height: 75%;
   padding-right: 10px; }
 
+.navbar.navbar-inverse.navbar-fixed-top {
+  position: absolute; }
+
 .navbar-nav > li:hover {
   text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.48);
   background: rgba(0, 0, 0, 0.27);
@@ -102,7 +105,8 @@ span.glyphicon.glyphicon-plane {
 
 aside {
   width: 340px;
-  position: fixed;
+  position: absolute;
+  top: 55px;
   right: 10px; }
 
 aside div {
