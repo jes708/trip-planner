@@ -70,20 +70,32 @@
       <div id="itinerary-div">
         <div class="form-group">
           <h4>My Hotel</h4>
-          <p>{{ myArray.hotel }}</p>
+          {% if myArray.hotel %}
+          <div class="added">  
+            <p>{{ myArray.hotel }}</p>
+            <button type="submit" class="btn btn-clear"><span class="glyphicon glyphicon-remove"></span></button>
+          </div>
+          {% endif %} 
         </div>
+
 
         <div class="form-group">
           <h4>My Restaurants</h4>
           {% for restaurant in myArray.restaurants %}
+          <div class="added">  
             <p>{{ restaurant }}</p>
+            <button type="submit" class="btn btn-clear"><span class="glyphicon glyphicon-remove"></span></button>
+          </div>
           {% endfor %}  
         </div>
 
         <div class="form-group">
           <h4>My Activities</h4>
           {% for activity in myArray.activities %}
+          <div class="added">
             <p>{{ activity }}</p>
+              <button type="submit" class="btn btn-clear"><span class="glyphicon glyphicon-remove"></span></button>
+          </div>
           {% endfor %}  
         </div>
       </div>

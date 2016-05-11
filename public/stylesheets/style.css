@@ -38,8 +38,7 @@ span.glyphicon.glyphicon-plane {
 .navbar-nav > li:hover {
   text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.48);
   background: rgba(0, 0, 0, 0.27);
-  border-left: 1px inset rgba(2, 2, 2, 0.23);
-  border-right: 1px outset rgba(0, 0, 0, 0.17); }
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.52); }
 
 .navbar-inverse {
   background: #295985;
@@ -82,7 +81,8 @@ span.glyphicon.glyphicon-plane {
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: 3px 1px 18px rgba(0, 0, 0, 0.13); }
   .days .form-group {
-    margin: 0; }
+    margin: 0;
+    padding: 0; }
 
 .subform-group {
   display: flex; }
@@ -126,3 +126,22 @@ aside div {
 
 select {
   min-width: 250px; }
+
+.added {
+  display: flex;
+  padding: 0; }
+  .added p {
+    max-width: 250px; }
+
+.btn.btn-clear, .btn.btn-clear:focus, .btn.btn-clear:active {
+  color: #e9bcbc;
+  background: transparent;
+  border-color: transparent;
+  padding: 0;
+  position: absolute;
+  right: 35px;
+  outline: none;
+  box-shadow: none; }
+
+.btn-clear:hover {
+  color: #f95252; }
